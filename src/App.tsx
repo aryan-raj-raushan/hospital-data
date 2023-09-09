@@ -2,11 +2,16 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
-import About from "./component/Navbar/About/About";
-import Patients from "./component/Navbar/Patients/Patients";
-import AddPatientDetails from "./component/Navbar/Add-Patient-Details/AddPatientDetails";
+import About from "./component/About/About";
+import Patients from "./component/Patients/Patients";
+import AddPatientDetails from "./component/Add-Patient-Details/AddPatientDetails";
 import Home from "./component/Home/Home";
-// import AddPatientForm from './component/PatientDetails';
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+// import your icons
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
 
 const App = () => {
   return (
@@ -25,3 +30,4 @@ const App = () => {
 }
 
 export default App;
+library.add(fab, fas, far)

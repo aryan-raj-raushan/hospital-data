@@ -45,17 +45,8 @@ const usePatientsHook = () => {
   useEffect(() => {
     getPatientDetails();
   }, []);
-  // console.log("data", patientData);
 
-  const fields = [
-    { label: "Name", key: "Name" },
-    { label: "Phone", key: "Phone" },
-    { label: "DOB", key: "DOB" },
-    { label: "Residence", key: "Residence" },
-    { label: "Doctor Appointed", key: "Appointment" },
-  ];
-
-  return { patientData,isEditing, handleEdit,handleSave,handleChange,fields};
+  return { patientData,isEditing, handleEdit,handleSave,handleChange};
 };
 
 export default usePatientsHook;
