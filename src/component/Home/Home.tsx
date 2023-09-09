@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <header>
-        <div className="min-h-[75vh] md:relative overflow-hidden flex w-full items-baseline bg-gray-50">
+        <div className="min-h-[75vh] z-10 md:relative overflow-hidden flex w-full items-baseline bg-gray-50">
           {/* /* ---------------------------------- Image --------------------------------- */}
           <div className="transform -skew-x-[10deg] overflow-hidden w-1/2 -right-12 rounded-bl-[12px] absolute top-0 h-full hidden md:block">
             <div className="transform skew-x-[10deg] absolute top-20 -right-2 h-full z-0 w-full bg-cover bg-no-repeat scale-[1.3] bg-center bg-hero-section"></div>
@@ -15,10 +15,10 @@ const Home = () => {
           {/* Image end */}
 
           {/* /* ------------------------------ Left section ------------------------------  */}
-          <div className="z-1 w-1/2 flex justify-center mt-20 ">
+          <div className="md:z-1 md:w-1/2 flex justify-center mt-20 ">
             <div className="flex flex-wrap mx-3 justify-center">
               <div className="w-full pl-10 flex gap-5 flex-col md:w-8/12">
-                <h1 className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 text-5xl font-bold">
+                <h1 className="md:relative md:z-10 bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 text-5xl font-bold">
                   Feel Better About
                 </h1>
                 <h1 className="text-gray-700 text-5xl font-bold ">
