@@ -6,3 +6,7 @@
 .bg-hero-section {
     background-image: url(../src/assets/images/hero-section-bg.avif);
 }
+
+.bg-about-section {
+    background-image: url(../src/assets/images/about-bg.avif);
+}

@@ -1,74 +1,7 @@
-import {
-  faFacebook,
-  faGithub,
-  faInstagram,
-  faPinterest,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-
-const icons = [
-  {
-    link: "facebook.com",
-    icon: faFacebook,
-  },
-  {
-    link: "twitter.com",
-    icon: faTwitter,
-  },
-  {
-    link: "instagram.com",
-    icon: faInstagram,
-  },
-  {
-    link: "pinterest.com",
-    icon: faPinterest,
-  },
-  {
-    link: "github.com",
-    icon: faGithub,
-  },
-];
-
-const footerLinks = [
-  {
-    title: "Company",
-    links: [
-      { label: "About Us", url: "#" },
-      { label: "Careers", url: "#" },
-      { label: "Press", url: "#" },
-      { label: "Blog", url: "#" },
-    ],
-  },
-  {
-    title: "Pages",
-    links: [
-      { label: "Login", url: "#" },
-      { label: "Register", url: "#" },
-      { label: "Add list", url: "#" },
-      { label: "Contact", url: "#" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Terms", url: "#" },
-      { label: "About Us", url: "#" },
-      { label: "Team", url: "#" },
-      { label: "Privacy", url: "#" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Blog", url: "#" },
-      { label: "Service", url: "#" },
-      { label: "Product", url: "#" },
-      { label: "Pricing", url: "#" },
-    ],
-  },
-];
+import { footerLinks, icons } from "../../Const/const";
 
 function Footer() {
   return (
