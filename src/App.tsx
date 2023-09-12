@@ -12,6 +12,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
+// import Login from "./component/Login/Login";
+// import SignUp from "./component/Login/SignUp";
+import SignUpPage from "./component/Login/SignUpPage";
+import LoginPage from "./component/Login/LoginPage";
 
 const App = () => {
   return (
@@ -23,6 +27,9 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/patients" element={<Patients />} />
           <Route path="/add-patients" element={<AddPatientDetails />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/login" element={<LoginPage />} />
+
         </Routes>
       </div>
     </Router>

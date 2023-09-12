@@ -1,9 +1,8 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import { footerLinks, icons } from "../../Const/const";
 
-function Footer() {
+const Footer = () => {
   return (
     <div className="">
       <div className="flex flex-wrap justify-around px-28">
@@ -19,6 +18,8 @@ function Footer() {
                   href={item.link}
                   className="hover:scale-110 duration-300 transition-all ease-in-out"
                   key={index}
+                  target="_blank"
+                  rel="noopener noreferrer" 
                 >
                   <FontAwesomeIcon icon={item.icon} size="lg" />
                 </a>
@@ -31,7 +32,9 @@ function Footer() {
             key={index}
             className="pb-4 flex flex-col gap-2 justify-between text-start"
           >
-            <h6 className="text-gray-700 text-base text-start">{section.title}</h6>
+            <h6 className="text-gray-700 text-base text-start">
+              {section.title}
+            </h6>
             <ul className="space-y-2">
               {section.links.map((link, linkIndex) => (
                 <li key={linkIndex}>
@@ -54,6 +57,6 @@ function Footer() {
       </div>
     </div>
   );
-}
+};
 
 export default Footer;

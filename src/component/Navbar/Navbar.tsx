@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
   faHouseChimney,
   faUser,
@@ -39,6 +39,8 @@ const Navbar = () => {
       setMobileMenuOpen(!mobileMenuOpen);
     }
   };
+
+  const navigate = useNavigate()
 
   return (
     <nav className="bg-white border drop-shadow-lg shadow px-4 py-2 flex justify-between items-center md:h-20 relative">
@@ -91,10 +93,10 @@ const Navbar = () => {
 
       {/* Sign Up and Sign In */}
       <div className="hidden md:flex space-x-4">
-        <button className="transition duration-300 bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg hover:scale-110">
+        {/* <button onClick={()=> navigate("/signup")} className="transition duration-300 bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg hover:scale-110">
           Sign Up
-        </button>
-        <button className="transition duration-300 bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg hover:scale-110">
+        </button> */}
+        <button onClick={()=> navigate("/login")} className="transition duration-300 bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg hover:scale-110">
           Sign In
         </button>
       </div>
