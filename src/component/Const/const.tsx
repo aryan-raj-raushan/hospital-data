@@ -49,9 +49,9 @@ export const blogs = [
       As a doctor, I encourage my patients to prioritize stress management as part of their overall health plan. It's not just about physical well-being; it's about holistic health. When you take steps to manage stress, you not only feel better mentally and emotionally, but you also reduce the risk of developing chronic diseases.
       
       Remember, your health is your most valuable asset, and stress management is an integral part of preserving it. Don't underestimate the power of relaxation and self-care in leading a healthier and happier life.`,
-  },
-  // Add more blog entries as needed
-];
+    },
+    // Add more blog entries as needed
+  ];
 
 export const sectionConst = [
   {
@@ -91,8 +91,75 @@ export const peopleChoseConst = [
     icon: faClockRotateLeft,
     text: "When we lose family over time.",
     subtext: "What else could rust the heart more over time? Blackgold.",
-  },
-];
+  },];
+
+
+  export const loginFields = [
+    {
+      labelText: "Email address",
+      labelFor: "email-address",
+      id: "email-address",
+      name: "email",
+      type: "email",
+      autoComplete: "email",
+      isRequired: true,
+      placeholder: "Email address",
+    },
+    {
+      labelText: "Password",
+      labelFor: "password",
+      id: "password",
+      name: "password",
+      type: "password",
+      autoComplete: "current-password",
+      isRequired: true,
+      placeholder: "Password",
+    },
+  ];
+
+  export const signupFields = [
+    {
+      labelText: "Username",
+      labelFor: "username",
+      id: "username",
+      name: "username",
+      type: "text",
+      autoComplete: "username",
+      isRequired: true,
+      placeholder: "Username",
+    },
+    {
+      labelText: "Email address",
+      labelFor: "email-address",
+      id: "email-address",
+      name: "email",
+      type: "email",
+      autoComplete: "email",
+      isRequired: true,
+      placeholder: "Email address",
+    },
+    {
+      labelText: "Password",
+      labelFor: "password",
+      id: "password",
+      name: "password",
+      type: "password",
+      autoComplete: "current-password",
+      isRequired: true,
+      placeholder: "Password",
+    },
+    {
+      labelText: "Confirm Password",
+      labelFor: "confirm-password",
+      id: "confirm-password",
+      name: "confirm-password",
+      type: "password",
+      autoComplete: "confirm-password",
+      isRequired: true,
+      placeholder: "Confirm Password",
+    },
+  ];
+
 
 export const clinicBlogs = [
   {
@@ -115,25 +182,26 @@ export const clinicBlogs = [
   },
 ];
 
-export const icons = [
+export 
+const icons = [
   {
-    link: "facebook.com",
+    link: "https://www.facebook.com",
     icon: faFacebook,
   },
   {
-    link: "twitter.com",
+    link: "https://www.twitter.com",
     icon: faTwitter,
   },
   {
-    link: "instagram.com",
+    link: "https://www.instagram.com",
     icon: faInstagram,
   },
   {
-    link: "pinterest.com",
+    link: "https://www.pinterest.com",
     icon: faPinterest,
   },
   {
-    link: "github.com",
+    link: "https://www.github.com",
     icon: faGithub,
   },
 ];
