@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { navbarMenu } from "../Const/const";
 import { useFirebaseAuth } from "../../firebase.auth";
-import { getAuth, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
+import { firebaseAuth } from "../../firebase.config";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,8 +32,7 @@ const Navbar = () => {
   };
 
   const accountLogout = () => {
-    const auth = getAuth();
-    signOut(auth)
+    signOut(firebaseAuth)
       .then(() => {
         navigate("/login"); // Sign-out successful.
       })

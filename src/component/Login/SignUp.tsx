@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import FormAction from "./FormAction";
 import Input from "./Input";
 import { signupFields } from "../Const/const";
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { firebaseAuth } from "../../firebase.config";
 
 const fieldsState = Object.fromEntries(
   signupFields.map((field) => [field.id, ""])
@@ -48,9 +49,7 @@ const Signup = () => {
   // Handle Signup API Integration here
   const createAccount = async () => {
     const { email, password, username } = signupState;
-
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(firebaseAuth, email, password)
       .then(async (userCredential) => {
         const user = userCredential.user;
         await updateProfile(user, {

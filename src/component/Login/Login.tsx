@@ -3,8 +3,9 @@ import Input from "./Input";
 import { loginFields } from "../Const/const";
 import FormAction from "./FormAction";
 import FormExtra from "./FormExtra";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { firebaseAuth } from "../../firebase.config";
 
 export type LoginState = {
   [key: string]: string;
@@ -33,8 +34,7 @@ const Login = () => {
   const accountLogin = () => {
     const { email, password }: any = loginState;
 
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(firebaseAuth, email, password)
       .then((userCredential: any) => {
         const user = userCredential.user;
         setUser(user);
