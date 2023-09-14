@@ -38,7 +38,6 @@ const Login = () => {
       .then((userCredential: any) => {
         const user = userCredential.user;
         setUser(user);
-        console.log(user)
         navigate("/");
       })
       .catch((error) => {

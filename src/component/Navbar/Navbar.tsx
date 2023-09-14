@@ -49,12 +49,21 @@ const Navbar = () => {
 
       {/* Hamburger Icon for Mobile */}
       <div className="md:hidden relative z-1">
-        <button
-          className="text-blue-500 text-2xl p-2"
-          onClick={toggleMobileMenu}
-        >
-          {!mobileMenuOpen ? "\u2630" : "\u2715"}
-        </button>
+        {user ? (
+          <button
+            className="text-blue-500 text-2xl p-2"
+            onClick={toggleMobileMenu}
+          >
+            {!mobileMenuOpen ? "\u2630" : "\u2715"}
+          </button>
+        ) : (
+          <button
+            onClick={() => navigate("/login")}
+            className="transition duration-300 bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg hover:scale-110"
+          >
+            Log In
+          </button>
+        )}
       </div>
 
       {/* Mobile Menu */}
@@ -101,7 +110,7 @@ const Navbar = () => {
               onClick={toggleDropdown}
               className="group-hover:bg-gray-200 hover:bg-gray-200 p-2 rounded-lg focus:outline-none px-4 mx-4"
             >
-             {userName}
+              {userName}
             </button>
             {dropdownOpen && (
               <div className="z-50 absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
@@ -149,12 +158,11 @@ const Navbar = () => {
         ) : (
           // User is not signed in
           <button
-          onClick={() => navigate("/login")}
-          className="transition duration-300 bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg hover:scale-110"
-        >
-          Log In
-        </button>
-
+            onClick={() => navigate("/login")}
+            className="transition duration-300 bg-blue-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg hover:scale-110"
+          >
+            Log In
+          </button>
         )}
       </div>
     </nav>
