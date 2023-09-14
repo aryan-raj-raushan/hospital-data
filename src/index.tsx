@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { FirebaseAuthProvider } from './firebase.auth';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <FirebaseAuthProvider>
     <App />
-  </React.StrictMode>
+  </FirebaseAuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
