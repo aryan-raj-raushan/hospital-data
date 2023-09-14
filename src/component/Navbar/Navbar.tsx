@@ -11,16 +11,12 @@ const Navbar = () => {
   const navigate = useNavigate();
   const user:any = useFirebaseAuth()
   const userName = user?.displayName;
-  // const {displayName}:any = userName
-
-  console.log("user navbar",user,userName)
 
   const toggleMobileMenu = () => {
     if (window.innerWidth < 768) {
       setMobileMenuOpen(!mobileMenuOpen);
     }
   };
-  console.log(user);
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 

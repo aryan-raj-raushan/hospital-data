@@ -47,7 +47,6 @@ const Signup = () => {
 
   // Handle Signup API Integration here
   const createAccount = async () => {
-    console.log("signupstate", signupState);
     const { email, password, username } = signupState;
 
     const auth = getAuth();

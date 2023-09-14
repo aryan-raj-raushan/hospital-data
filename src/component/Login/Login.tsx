@@ -47,7 +47,6 @@ const Login = () => {
         setError(errorMessage);
       });
   };
-  console.log(user)
 
   const getCustomErrorMessage = (errorCode: string) => {
     // Create a mapping of Firebase error codes to custom error messages
@@ -58,6 +57,8 @@ const Login = () => {
         "Email address is already in use. Please use a different email or login",
       "auth/wrong-password":
         "Wrong password. Please enter the correct password.",
+        "auth/email-not-found":
+      "Email not found. The provided email address is not registered.",
       // Add more error codes and custom messages as needed
     };
 
