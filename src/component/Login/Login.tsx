@@ -3,52 +3,77 @@ import Input from "./Input";
 import { loginFields } from "../Const/const";
 import FormAction from "./FormAction";
 import FormExtra from "./FormExtra";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
-const fields = loginFields;
-const fieldsState: any = {};
-fields.forEach((field: any) => (fieldsState[field.id] = ""));
-
+export type LoginState = {
+  [key: string]: string;
+};
 const Login = () => {
-  const [loginState, setLoginState] = useState(fieldsState);
+  const [loginState, setLoginState] = useState<LoginState>({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [user, setUser] = useState<any>();
+  const isFormValid = Object.values(loginState).every(
+    (value) => value && value.trim() !== ""
+  );
+  const navigate = useNavigate();
 
   const handleChange = (e: any) => {
     setLoginState({ ...loginState, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    authenticateUser();
+    accountLogin();
   };
-  const apiKey = 1234
 
-  //Handle Login API Integration here
-  const authenticateUser = () =>{
-        
-       
-    const endpoint=`https://api.loginradius.com/identity/v2/auth/login?apikey=${apiKey}`;
-     fetch(endpoint,
-         {
-         method:'POST',
-         headers: {
-         'Content-Type': 'application/json'
-         },
-         body:JSON.stringify(loginFields)
-         }).then(response=>response.json())
-         .then(data=>{
-            //API Success from LoginRadius Login API
-         })
-         .catch(error=>console.log(error))
-     
-}
+  const accountLogin = () => {
+    const { email, password }: any = loginState;
+
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential: any) => {
+        const user = userCredential.user;
+        setUser(user);
+        console.log(user)
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = getCustomErrorMessage(errorCode);
+        setError(errorMessage);
+      });
+  };
+  console.log(user)
+
+  const getCustomErrorMessage = (errorCode: string) => {
+    // Create a mapping of Firebase error codes to custom error messages
+    const errorMessages: any = {
+      "auth/invalid-email":
+        "Invalid email address. Please try with a different email.",
+      "auth/email-already-in-use":
+        "Email address is already in use. Please use a different email or login",
+      "auth/wrong-password":
+        "Wrong password. Please enter the correct password.",
+      // Add more error codes and custom messages as needed
+    };
+
+    return (
+      errorMessages[errorCode] || "An error occurred. Please try again later."
+    ); // Default message
+  };
 
   return (
     <form className="space-y-6">
       <div className="space-y-2">
-        {fields.map((field) => (
+        {loginFields.map((field) => (
           <Input
             key={field.id}
             handleChange={handleChange}
-            value={loginState[field.id]}
+            value={loginState[field.id] || ""}
             labelText={field.labelText}
             labelFor={field.labelFor}
             id={field.id}
@@ -60,7 +85,12 @@ const Login = () => {
         ))}
       </div>
       <FormExtra />
-      <FormAction handleSubmit={handleSubmit} text="Login" />
+      {error && <p className="text-red-500 text-sm font-normal">{error}</p>}
+      <FormAction
+        handleSubmit={handleSubmit}
+        text="Login"
+        disabled={!isFormValid}
+      />
     </form>
   );
 };

@@ -6,6 +6,10 @@ import {
   faShip,
   faHandshake,
   faClockRotateLeft,
+  faHouseChimney,
+  faUser,
+  faIdCard,
+  faAddressCard,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
@@ -14,6 +18,29 @@ import {
   faPinterest,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+
+export const navbarMenu = [
+  {
+    link: "/",
+    name: "Home",
+    icon: faHouseChimney,
+  },
+  {
+    link: "/about",
+    name: "About",
+    icon: faUser,
+  },
+  {
+    link: "/patients",
+    name: "Patient Details",
+    icon: faIdCard,
+  },
+  {
+    link: "/add-patients",
+    name: "Add Patient",
+    icon: faAddressCard,
+  },
+];
 
 export const fields: any = [
   { label: "Name", key: "Name" },
@@ -49,9 +76,9 @@ export const blogs = [
       As a doctor, I encourage my patients to prioritize stress management as part of their overall health plan. It's not just about physical well-being; it's about holistic health. When you take steps to manage stress, you not only feel better mentally and emotionally, but you also reduce the risk of developing chronic diseases.
       
       Remember, your health is your most valuable asset, and stress management is an integral part of preserving it. Don't underestimate the power of relaxation and self-care in leading a healthier and happier life.`,
-    },
-    // Add more blog entries as needed
-  ];
+  },
+  // Add more blog entries as needed
+];
 
 export const sectionConst = [
   {
@@ -91,74 +118,98 @@ export const peopleChoseConst = [
     icon: faClockRotateLeft,
     text: "When we lose family over time.",
     subtext: "What else could rust the heart more over time? Blackgold.",
-  },];
+  },
+];
 
+export const loginFields = [
+  {
+    labelText: "Email address",
+    labelFor: "email",
+    id: "email",
+    name: "email",
+    type: "email",
+    autoComplete: "email",
+    isRequired: true,
+    placeholder: "Email address",
+  },
+  {
+    labelText: "Password",
+    labelFor: "password",
+    id: "password",
+    name: "password",
+    type: "password",
+    autoComplete: "current-password",
+    isRequired: true,
+    placeholder: "Password",
+  },
+];
 
-  export const loginFields = [
-    {
-      labelText: "Email address",
-      labelFor: "email-address",
-      id: "email-address",
-      name: "email",
-      type: "email",
-      autoComplete: "email",
-      isRequired: true,
-      placeholder: "Email address",
-    },
-    {
-      labelText: "Password",
-      labelFor: "password",
-      id: "password",
-      name: "password",
-      type: "password",
-      autoComplete: "current-password",
-      isRequired: true,
-      placeholder: "Password",
-    },
-  ];
+export const reviews = [
+  {
+    image:
+      "https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-4.jpg",
+    text: `"We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."`,
+    reviewer: "John Down",
+    places: "Visionary, Google",
+  },
+  {
+    image:
+      "https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-3.jpg",
+    text: `"We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."`,
+    reviewer: "Marcell Glock",
+    places: "Chief Executive, Spotify",
+  },
+  {
+    image:
+      "https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-2.jpg",
+    text: `"We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."`,
+    reviewer: "Mathew Goat",
+    places: "Social Media Executive, Netflix",
+  },
+];
 
-  export const signupFields = [
-    {
-      labelText: "Username",
-      labelFor: "username",
-      id: "username",
-      name: "username",
-      type: "text",
-      autoComplete: "username",
-      isRequired: true,
-      placeholder: "Username",
-    },
-    {
-      labelText: "Email address",
-      labelFor: "email-address",
-      id: "email-address",
-      name: "email",
-      type: "email",
-      autoComplete: "email",
-      isRequired: true,
-      placeholder: "Email address",
-    },
-    {
-      labelText: "Password",
-      labelFor: "password",
-      id: "password",
-      name: "password",
-      type: "password",
-      autoComplete: "current-password",
-      isRequired: true,
-      placeholder: "Password",
-    },
-    {
-      labelText: "Confirm Password",
-      labelFor: "confirm-password",
-      id: "confirm-password",
-      name: "confirm-password",
-      type: "password",
-      autoComplete: "confirm-password",
-      isRequired: true,
-      placeholder: "Confirm Password",
-    },
-  ];
+export const signupFields = [
+  {
+    labelText: "Username",
+    labelFor: "username",
+    id: "username",
+    name: "username",
+    type: "text",
+    autoComplete: "username",
+    isRequired: true,
+    placeholder: "Username",
+  },
+  {
+    labelText: "Email address",
+    labelFor: "email",
+    id: "email",
+    name: "email",
+    type: "email",
+    autoComplete: "email",
+    isRequired: true,
+    placeholder: "Email address",
+  },
+  {
+    labelText: "Password",
+    labelFor: "password",
+    id: "password",
+    name: "password",
+    type: "password",
+    autoComplete: "current-password",
+    isRequired: true,
+    placeholder: "Password",
+  },
+  {
+    labelText: "Confirm Password",
+    labelFor: "confirm-password",
+    id: "confirm-password",
+    name: "confirm-password",
+    type: "password",
+    autoComplete: "confirm-password",
+    isRequired: true,
+    placeholder: "Confirm Password",
+  },
+];
 
 
 export const clinicBlogs = [

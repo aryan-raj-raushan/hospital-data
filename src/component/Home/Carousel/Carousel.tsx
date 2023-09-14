@@ -1,28 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-const reviews = [
-  {
-    image:
-      "https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-4.jpg",
-    text: `"We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."`,
-    reviewer: "John Down",
-    places: "Visionary, Google",
-  },
-  {
-    image:
-      "https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-3.jpg",
-    text: `"We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."`,
-    reviewer: "Marcell Glock",
-    places: "Chief Executive, Spotify",
-  },
-  {
-    image:
-      "https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/team-2.jpg",
-    text: `"We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams."`,
-    reviewer: "Mathew Goat",
-    places: "Social Media Executive, Netflix",
-  },
-];
+import { reviews } from "../../Const/const";
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,7 +56,7 @@ const Carousel = () => {
 
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 gap-4">
         {reviews.map((item, index) => (
-          <>
+          <span key={index}>
             <img
               src={item.image}
               alt=""
@@ -93,7 +70,7 @@ const Carousel = () => {
             {index < reviews.length - 1 && (
               <span className="bg-white w-[1px] h-4"></span>
             )}
-          </>
+          </span>
         ))}
       </div>
     </div>

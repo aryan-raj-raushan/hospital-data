@@ -10,7 +10,7 @@ const Home = () => {
         <div className="min-h-[75vh] z-10 md:relative overflow-hidden flex w-full items-baseline bg-gray-50">
           {/* /* ---------------------------------- Image --------------------------------- */}
           <div className="transform -skew-x-[10deg] overflow-hidden w-1/2 -right-12 rounded-bl-[12px] absolute top-0 h-full hidden md:block">
-            <div className="transform skew-x-[10deg] absolute top-20 -right-2 h-full z-0 w-full bg-cover bg-no-repeat scale-[1.3] bg-center bg-hero-section"></div>
+            <div className="transform skew-x-[10deg] absolute top-20 -right-2 h-full z-1 w-full bg-cover bg-no-repeat scale-[1.3] bg-center bg-hero-section"></div>
           </div>
           {/* Image end */}
 
